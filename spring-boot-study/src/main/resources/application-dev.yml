@@ -1,0 +1,15 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    url: jdbc:mysql://10.100.164.36:3307/study
+    username: root
+    password: zsc011021
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    static-path-pattern: /static/**
+  mail:
+    host: smtp.163.com
+    username: jayceweb@163.com
+    password: ZCGEWNZUGCKOEYRL
+
