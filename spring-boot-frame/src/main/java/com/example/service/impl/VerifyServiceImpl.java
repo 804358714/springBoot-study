@@ -25,7 +25,7 @@ public class VerifyServiceImpl implements VerifyService {
         message.setSubject("【JayceWeb】您的注册验证码");
         Random random = new Random();
         int code = random.nextInt(899999)+100000;
-        template.opsForValue().set("verify:code:"+mail, String.valueOf(code),1, TimeUnit.MINUTES);
+        template.opsForValue().set("verify:code:"+mail, String.valueOf(code),3, TimeUnit.MINUTES);
         message.setText("您的注册验证码为："+code+" , 三分钟内有效，请及时完成注册！\n如果不是本人操作，请忽略。");
         message.setFrom(from);
         message.setTo(mail);

@@ -9,10 +9,5 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Integer> {
-    Account findAccountByUsername(String username);
-    Account findAccountByUsernameLike(String str);
-    @Query("update Account set password = ?2 where id = ?1")
-    @Modifying
-    @Transactional
-    int updatePasswordById(int id,String newPassword);
+
 }

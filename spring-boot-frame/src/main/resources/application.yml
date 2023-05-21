@@ -4,7 +4,7 @@ spring:
     username: jayceweb@163.com
     password: ZCGEWNZUGCKOEYRL
   datasource:
-    url: jdbc:mysql://10.100.164.36:3307/study
+    url: jdbc:mysql://10.100.164.36:3307/book_manage
     username: root
     password: zsc011021
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -12,8 +12,8 @@ spring:
     host: 10.100.164.36
     password: 20011021
     database: 2
-  mvc:
-    static-path-pattern: /static/**
+#  mvc:
+#    static-path-pattern: /static/**
   jpa:
     show-sql: true
     hibernate:
