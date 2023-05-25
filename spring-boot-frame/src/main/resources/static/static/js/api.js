@@ -40,7 +40,7 @@ function login(){
 }
 
 function logout(){
-    get('http://localhost:8080/api/auth/logout',function (data){
+    get('http://localhost:8080/api/auth/logout',{},function (data){
         if(data.code === 200){
             window.location = "login.html"
         }
@@ -48,7 +48,7 @@ function logout(){
 }
 
 function initUserInfo(){
-    get('http://localhost:8080/api/user/info',function (data){
+    get('http://localhost:8080/api/user/info',{},function (data){
         if (data.code === 200){
             $("#profile-name").text(data.data.username)
         }else {
@@ -57,11 +57,12 @@ function initUserInfo(){
     })
 }
 
-function get(url, success){
+function get(url, data ,success){
     $.ajax({
         type: "get",
         url: url,
         async: true,
+        data: data,
         dataType: 'json',
         xhrFields: {
             withCredentials: true

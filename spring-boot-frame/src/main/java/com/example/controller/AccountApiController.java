@@ -3,6 +3,7 @@ package com.example.controller;
 import com.example.entity.Account;
 import com.example.entity.response.RestBean;
 import com.example.repository.AccountRepository;
+import io.swagger.annotations.Api;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+@Api(tags = "用户信息",description = "所有的用户信息包括更新，查询等")
 @RestController
 @RequestMapping("/api/user")
 public class AccountApiController {

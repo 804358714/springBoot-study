@@ -7,9 +7,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="spring-boot-study" />
         <module name="spring-boot-frame" />
         <module name="spring_mybatis" />
+        <module name="spring-boot-study" />
+        <module name="hadoop-test" />
       </profile>
     </annotationProcessing>
   </component>

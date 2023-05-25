@@ -3,11 +3,14 @@ package com.example.controller;
 import com.example.entity.response.RestBean;
 import com.example.service.AccountService;
 import com.example.service.VerifyService;
+import io.swagger.annotations.*;
 import org.springframework.security.core.parameters.P;
 import org.springframework.web.bind.annotation.*;
+import springfox.documentation.annotations.ApiIgnore;
 
 import javax.annotation.Resource;
 
+@Api(tags = "用户验证",description = "用户登录成功、失败的返回实体，注册以及验证码发送等")
 @RestController
 @RequestMapping("/api/auth")
 public class AuthApiController {
@@ -15,8 +18,13 @@ public class AuthApiController {
     VerifyService verifyService;
     @Resource
     AccountService accountService;
+    @ApiResponses({
+            @ApiResponse(code = 200, message = "邮件发送成功"),
+            @ApiResponse(code = 500, message = "邮件发送失败")   //不同返回状态码描述
+    })
+    @ApiOperation("请求邮件验证码")
     @GetMapping("/verify-code")
-    public RestBean<Void> verifyCode(@RequestParam String mail){
+    public RestBean<Void> verifyCode(@ApiParam("邮箱地址") @RequestParam String mail){
         try {
             verifyService.sendVerifyMail(mail);
             return new RestBean<>(200,"邮件发送成功");
@@ -54,6 +62,7 @@ public class AuthApiController {
         return new RestBean<>(200,"退出成功");
     }
 
+    @ApiIgnore
     @RequestMapping("/access-deny")
     public RestBean<Void> accessDeny(){
         return new RestBean<>(401,"未验证请先进行登录");
