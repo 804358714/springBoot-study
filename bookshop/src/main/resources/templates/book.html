@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>查询结果</title>
+</head>
+<body>
+<div style="text-align: center">
+    <a style="font-size: 30px" href="/index">返回查询</a>
+</div>
+<div>
+    <table style="margin: 0 auto;text-align: center" width="400" height="200" border="1px">
+        <tr>
+            <th style="font-size: 30px">id</th>
+            <th style="font-size: 30px">书名</th>
+            <th style="font-size: 30px">库存</th>
+        </tr>
+        <tr th:if="${book!=null}">
+            <td th:text="${book.getId()}" style="font-size: 30px">1</td>
+            <td th:text="${book.getBookName()}" style="font-size: 30px">1</td>
+            <td th:text="${book.getInventory()}" style="font-size: 30px">1</td>
+        </tr>
+        <tr th:if="${book==null}">
+            <td colspan="3">找不到该书</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -4,11 +4,7 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/spring_mybatis/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-study/pom.xml" />
-        <option value="$PROJECT_DIR$/spring-boot-frame/pom.xml" />
-        <option value="$PROJECT_DIR$/hadoop-test/pom.xml" />
-        <option value="$PROJECT_DIR$/bookshop/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
